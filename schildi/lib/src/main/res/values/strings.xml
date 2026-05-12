@@ -5,7 +5,7 @@
     <string name="sc_action_low_priority">Low priority</string>
 
     <!-- Onboarding -->
-    <string name="sc_onboarding_welcome_title">Welcome to SchildiChat</string>
+    <string name="sc_onboarding_welcome_title">Welcome to GosseChat</string>
     <string name="sc_onboarding_welcome_summary">Bringing turtles into the Matrix</string>
 
     <!-- SchildiChat settings -->
@@ -224,4 +224,6 @@
     <string name="sc_notification_lookup_failure_summary">Failed to look up message for notification</string>
     <string name="sc_bg_notification_channel">Background service</string>
     <string name="sc_push_failure_notification_channel">Notification failures</string>
+     <string name="sc_app_name">GosseMessage</string>
+    <string name="sc_app_name_launcher">GosseMessage</string>
 </resources>
