@@ -96,18 +96,18 @@ fun ChangeAccountProviderView(
                     )
                 }
                 // Other
-                if (state.canSearchForAccountProviders) {
-                    AccountProviderOtherView(
-                        onClick = onOtherProviderClick
-                    )
-                }
+               //  if (state.canSearchForAccountProviders) {
+               //     AccountProviderOtherView(
+               //        onClick = onOtherProviderClick
+               //    )
+               // }
                 Spacer(Modifier.height(32.dp))
             }
-            ChangeServerView(
-                state = state.changeServerState,
-                onLearnMoreClick = onLearnMoreClick,
-                onSuccess = onSuccess,
-            )
+           // ChangeServerView(
+           //     state = state.changeServerState,
+           //     onLearnMoreClick = onLearnMoreClick,
+           //     onSuccess = onSuccess,
+           // )
         }
     }
 }
