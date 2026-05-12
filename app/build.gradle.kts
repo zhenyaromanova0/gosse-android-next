@@ -43,7 +43,7 @@ android {
 
     defaultConfig {
         //applicationId = BuildTimeConfig.APPLICATION_ID
-        applicationId = "chat.schildi.android"
+        applicationId = "com.gosse.message"
         versionCode = 1180
         versionName = "0.11.1-ex_26_4_4"
         targetSdk = Versions.TARGET_SDK
