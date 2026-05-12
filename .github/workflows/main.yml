@@ -48,14 +48,17 @@ jobs:
 
       - name: Find APK
         run: |
-          echo "=== Current directory ==="
-          pwd
-          ls -la
-          echo "=== Searching for APK ==="
-          find . -name "*.apk" -type f 2>/dev/null || true
+          echo "=== app/build structure ==="
+          find app/build -type d 2>/dev/null | head -30 || echo "No app/build"
+          echo "=== All APK files ==="
+          find app/build -name "*.apk" 2>/dev/null || echo "No APK found"
+          echo "=== All AAB files ==="
+          find app/build -name "*.aab" 2>/dev/null || echo "No AAB found"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: GosseMessage-APK
-          path: ./**/*.apk
+          path: |
+            app/build/**/*.apk
+            app/build/**/*.aab
