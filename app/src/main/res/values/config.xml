@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_homeserver_url" translatable="false">https://gossemessage.duckdns.org</string>
+    <string name="default_server_name" translatable="false">gossemessage.duckdns.org</string>
+    <bool name="allow_custom_homeserver">false</bool>
+    <bool name="show_server_selection">false</bool>
+</resources>
