@@ -44,7 +44,7 @@ class ChangeAccountProviderPresenter(
         }
 
         val canSearchForAccountProviders = remember {
-            enterpriseService.canConnectToAnyHomeserver()
+            false // enterpriseService.canConnectToAnyHomeserver()
         }
 
         val changeServerState = changeServerPresenter.present()
