@@ -40,7 +40,7 @@ jobs:
 
       - name: Generate keystore
         run: |
-          keytool -genkey -v -keystore gossemessage-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias gossemessage -storepass GossePass2026 -keypass GossePass2026 -dname "CN=GosseMessage, O=Gosse, C=RU"
+          keytool -genkey -v -keystore app/gossemessage-keystore.jks -keyalg RSA -keysize 2048 -validity 10000 -alias gossemessage -storepass GossePass2026 -keypass GossePass2026 -dname "CN=GosseMessage, O=Gosse, C=RU"
 
       - name: Build Release APK
         run: |
@@ -49,7 +49,7 @@ jobs:
           export PATH=$JAVA_HOME/bin:$PATH
           java -version
           ./gradlew assembleFdroidScDefaultRelease \
-            -Pandroid.injected.signing.store.file=gossemessage-keystore.jks \
+            -Pandroid.injected.signing.store.file=app/gossemessage-keystore.jks \
             -Pandroid.injected.signing.store.password=GossePass2026 \
             -Pandroid.injected.signing.key.alias=gossemessage \
             -Pandroid.injected.signing.key.password=GossePass2026
