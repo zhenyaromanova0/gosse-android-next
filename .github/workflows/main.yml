@@ -40,7 +40,7 @@ jobs:
       - name: Build Release APK
         run: |
           source $HOME/.cargo/env
-          ./gradlew assembleScRelease \
+          ./gradlew app:assembleScRelease \
             -Pandroid.injected.signing.store.file=gossemessage-keystore.jks \
             -Pandroid.injected.signing.store.password=GossePass2026 \
             -Pandroid.injected.signing.key.alias=gossemessage \
@@ -49,20 +49,17 @@ jobs:
       - name: Find APK
         run: |
           echo "=== app/build/outputs ==="
-          ls -la app/build/outputs/ 2>/dev/null || echo "No outputs"
-          echo "=== app/build/outputs/apk ==="
-          ls -laR app/build/outputs/apk/ 2>/dev/null || echo "No apk dir"
-          echo "=== app/build/outputs/bundle ==="
-          ls -laR app/build/outputs/bundle/ 2>/dev/null || echo "No bundle dir"
-          echo "=== All APK in project ==="
-          find . -name "*.apk" 2>/dev/null || echo "No APK"
-          echo "=== All AAB in project ==="
-          find . -name "*.aab" 2>/dev/null || echo "No AAB"
+          ls -laR app/build/outputs/ 2>/dev/null || echo "No outputs dir"
+          echo "=== All APK files ==="
+          find . -name "*.apk" -type f 2>/dev/null || echo "No APK found"
+          echo "=== All AAB files ==="
+          find . -name "*.aab" -type f 2>/dev/null || echo "No AAB found"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: GosseMessage-APK
           path: |
-            **/*.apk
-            **/*.aab
+            app/build/**/*.apk
+            app/build/**/*.aab
+          if-no-files-found: warn
